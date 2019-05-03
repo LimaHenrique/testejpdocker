@@ -1,8 +1,10 @@
 from selenium import webdriver
 from pages.pages.pageObject import Home
+from Pyautomators import fixture
+from Pyautomators.contrib.scenario_autoretry import scenario_retry
 
 def before_all(context):
-	context.driver=webdriver.Chrome('driver/chromedriver.exe')
+	context.driver=webdriver.Remote('http://192.168.56.101:4444/wd/hub')
 	context.home_page=Home(context.driver)
 
 def before_feature(context,feature):
