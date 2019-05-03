@@ -6,6 +6,7 @@ pipeline{
                 echo 'Building'
                 git 'https://github.com/LimaHenrique/testejpdocker'
                 sh '''
+                git fetch --tags --progress origin +refs/heads/master:refs/remotes/origin/master --prune
                 git config --global --unset http.proxy 
                 git config --global --unset https.proxy
                 '''
