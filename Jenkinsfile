@@ -4,6 +4,7 @@ pipeline{
         stage ("Build"){
             steps{
                 echo 'Building'
+                git 'https://github.com/LimaHenrique/testejpdocker'
                 sh '''
                 git config --global --unset http.proxy 
                 git config --global --unset https.proxy
