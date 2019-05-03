@@ -4,6 +4,7 @@ pipeline{
         stage ("Build"){
             steps{
                 echo 'Building'
+                git 'https://github.com/LimaHenrique/testejpdocker'
             }
         }
         stage ("Test"){
