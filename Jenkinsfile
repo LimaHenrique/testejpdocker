@@ -5,11 +5,12 @@ pipeline{
         stage ("Build"){
             steps{
                 echo 'Building'
+                sh 'git config --global http.proxy http://proxyuser:proxypwd@proxy.server.com:8080'
             }
         }
         stage ("Test"){
             steps{
-               bat 'python -m Pyautomators -f json -o .testejp.json'
+               sh 'python -m Pyautomators -f json -o .testejp.json'
             }
         }
     }
