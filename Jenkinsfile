@@ -4,7 +4,10 @@ pipeline{
         stage ("Build"){
             steps{
                 echo 'Building'
-                sh 'git config --global http.proxy http://proxyuser:proxypwd@proxy.server.com:8080'
+                sh '''
+                git config --global --unset http.proxy 
+                git config --global --unset https.proxy
+                '''
             }
         }
         stage ("Test"){
